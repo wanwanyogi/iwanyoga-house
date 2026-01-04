@@ -1,142 +1,206 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>愛丸瑜伽 iWan Yoga House</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>愛丸瑜伽 iWan Yoga House</title>
 
-<style>
-*{box-sizing:border-box;}
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Noto Sans TC",Arial,sans-serif;
-  background:#f9f6f2;
-  color:#555;
-  line-height:1.65;
-  overflow-x:hidden;
-  opacity:0;
-  animation:fadeIn 1.2s forwards;
-}
-@keyframes fadeIn{to{opacity:1}}
+  <style>
+    :root{
+      --purple:#6a4c93;
+      --soft:#f9f6f2;
+      --text:#555;
+      --card: rgba(255,255,255,.82);
+      --shadow: 0 12px 32px rgba(0,0,0,.08);
+    }
+    *{ box-sizing:border-box; }
 
-header{
-  padding:42px 16px 24px;
-  text-align:center;
-}
-.brand{
-  max-width:900px;
-  margin:auto;
-  padding:28px 18px;
-  border-radius:22px;
-  background:linear-gradient(135deg,#e6d9f2,#f7d6e4,#e6f3ea);
-  box-shadow:0 12px 30px rgba(0,0,0,.08);
-}
-h1{
-  margin:0;
-  font-size:clamp(26px,5vw,40px);
-  color:#6a4c93;
-}
-.subtitle{
-  margin-top:10px;
-  font-size:clamp(14px,2.6vw,18px);
-  color:#7a6794;
-}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,"Noto Sans TC",sans-serif;
+      background:
+        radial-gradient(1200px 800px at 20% 0%, #f3e9ff 0%, transparent 60%),
+        radial-gradient(1000px 700px at 90% 20%, #ffe6ef 0%, transparent 55%),
+        radial-gradient(900px 650px at 60% 100%, #e9fff1 0%, transparent 55%),
+        var(--soft);
+      color:var(--text);
+      line-height:1.7;
+      overflow-x:hidden;
+      opacity:0;
+      animation:fadeIn 1.2s ease forwards;
+    }
+    @keyframes fadeIn{ to{ opacity:1; } }
 
-main{
-  max-width:900px;
-  margin:auto;
-  padding:20px 16px 40px;
-}
-.panel{
-  background:rgba(255,255,255,.85);
-  border-radius:22px;
-  padding:22px 20px 28px;
-  box-shadow:0 12px 30px rgba(0,0,0,.08);
-}
+    header{
+      padding: 44px 16px 22px;
+      text-align:center;
+    }
+    .brand{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 18px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(217,195,230,.78), rgba(247,198,217,.75), rgba(230,239,232,.75));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+    h1{
+      margin:0;
+      font-size: clamp(26px, 4.8vw, 40px);
+      color: var(--purple);
+      letter-spacing:.4px;
+    }
+    .chips{
+      margin-top: 12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:center;
+    }
+    .chip{
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.55);
+      border: 1px solid rgba(255,255,255,.65);
+      color:#6f5c86;
+      font-weight:700;
+      font-size: 13px;
+      backdrop-filter: blur(10px);
+    }
 
-h2{
-  margin:22px 0 10px;
-  color:#6a4c93;
-  font-size:18px;
-}
+    main{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 18px 16px 40px;
+    }
 
-/* ===== 連結按鈕（不跑位核心） ===== */
-.link-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:14px;
-  margin-top:14px;
-}
-.link-card{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  width:100%;
-  min-height:96px;
-  padding:14px 10px;
-  border-radius:18px;
-  color:#fff;
-  text-decoration:none;
-  font-weight:700;
-  font-size:15px;
-  line-height:1.25;
-  box-shadow:0 10px 22px rgba(0,0,0,.15);
-  word-break:break-word;
-}
-.link-card small{
-  margin-top:6px;
-  font-size:13px;
-  font-weight:600;
-}
-.line{background:#2dbb5f;}
-.ig{background:#e84b8a;}
-.fb{background:#1877f2;}
-.mail{background:#8b7aa8;}
-.span-2{grid-column:1 / -1;}
+    .panel{
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.6);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 18px 18px 22px;
+      backdrop-filter: blur(10px);
+    }
 
-@media(max-width:420px){
-  .link-grid{grid-template-columns:1fr;}
-  .span-2{grid-column:auto;}
-}
+    h2{
+      margin: 20px 0 10px;
+      color: var(--purple);
+      font-size: 18px;
+      letter-spacing:.2px;
+    }
 
-/* ===== QR Code ===== */
-.qr-grid{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:14px;
-  margin-top:16px;
-}
-.qr-card{
-  background:#fff;
-  border-radius:18px;
-  padding:14px;
-  text-align:center;
-  box-shadow:0 10px 22px rgba(0,0,0,.1);
-}
-.qr-card img{
-  width:100%;
-  max-width:220px;
-  border-radius:14px;
-}
-.qr-card div{
-  margin-top:8px;
-  font-size:13px;
-  font-weight:700;
-  color:#6a4c93;
-}
-@media(max-width:720px){
-  .qr-grid{grid-template-columns:1fr;}
-}
+    .lead-title{
+      color:#3e3e3e;
+      font-weight:900;
+      margin: 6px 0 10px;
+      font-size: 16px;
+    }
 
-footer{
-  text-align:center;
-  margin-top:26px;
-  font-size:12px;
-  color:#777;
-}
-</style>
+    .muted{ color:#6b6b6b; }
+
+    ul{
+      margin: 10px 0 0 20px;
+      padding:0;
+    }
+    li{ margin: 8px 0; }
+    li b{ color:#3f3f3f; }
+
+    /* ===== 不跑位按鈕 Grid ===== */
+    .link-grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .span-2{ grid-column: 1 / -1; }
+
+    .link-card{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+
+      width:100%;
+      min-height: 96px;         /* ⭐ 統一高度，不會跑位 */
+      padding: 14px 12px;
+      border-radius: 18px;
+
+      color:#fff;
+      text-decoration:none;
+      font-weight: 800;
+      font-size: 15px;
+      line-height: 1.25;
+      letter-spacing:.2px;
+
+      box-shadow: 0 10px 22px rgba(0,0,0,.12);
+      word-break: break-word;
+      overflow:hidden;
+      transition: transform .18s ease, opacity .18s ease;
+    }
+    .link-card small{
+      margin-top:6px;
+      font-size: 13px;
+      opacity:.95;
+      font-weight: 700;
+    }
+    .link-card:hover{ transform: scale(1.02); opacity:.96; }
+
+    .line{ background: linear-gradient(135deg,#2cc85d,#1ea74a); }
+    .ig  { background: linear-gradient(135deg,#f05a9b,#d93a7d); }
+    .fb  { background: linear-gradient(135deg,#2b7cff,#1457c9); }
+    .mail{ background: linear-gradient(135deg,#8b7aa8,#6f5c86); }
+
+    /* ===== QR 區塊 ===== */
+    .qr-grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .qr-card{
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(255,255,255,.65);
+      border-radius: 18px;
+      padding: 12px;
+      box-shadow: 0 10px 22px rgba(0,0,0,.08);
+      text-align:center;
+    }
+    .qr-card img{
+      width: 100%;
+      max-width: 240px;
+      height: auto;
+      border-radius: 14px;
+      box-shadow: 0 8px 18px rgba(0,0,0,.10);
+      display:block;
+      margin: 0 auto;
+    }
+    .qr-card div{
+      margin-top: 10px;
+      font-weight: 800;
+      color:#6f5c86;
+      font-size: 13px;
+      line-height: 1.25;
+      word-break: break-word;
+    }
+
+    footer{
+      text-align:center;
+      padding: 18px 12px 26px;
+      color:#7a7a7a;
+      font-size: 12px;
+    }
+
+    @media (max-width: 720px){
+      .qr-grid{ grid-template-columns: 1fr; } /* 手機 QR 直排更清楚 */
+    }
+    @media (max-width: 420px){
+      .link-grid{ grid-template-columns: 1fr; } /* 超小螢幕改單欄：100% 不可能跑位 */
+      .span-2{ grid-column:auto; }
+      .link-card{ min-height: 88px; }
+    }
+  </style>
 </head>
 
 <body>
@@ -144,50 +208,88 @@ footer{
 <header>
   <div class="brand">
     <h1>愛丸瑜伽 iWan Yoga House</h1>
-    <div class="subtitle">溫柔・覺察・修復的瑜伽練習空間</div>
+    <div class="chips">
+      <div class="chip">竹北瑜伽</div>
+      <div class="chip">Inside Yoga</div>
+      <div class="chip">Inside Flow</div>
+      <div class="chip">RecoveRing 康復理療環</div>
+    </div>
   </div>
 </header>
 
 <main>
   <div class="panel">
 
-    <h2>關於愛丸瑜伽</h2>
-    <p>
-      在呼吸與流動之間，讓身體回到更穩定、更自在的狀態。<br>
-      iWan Yoga House 以排列、覺察與溫柔修復為核心，
-      陪你把日子練成更靠近自己的樣子。
+    <!-- ✅ 圖三的完整文字（你指定） -->
+    <div class="lead-title">專屬於 身心靈平衡與療癒的空間</div>
+    <p class="muted" style="margin-top:8px;">
+      竹北唯一專業 Inside Yoga 內觀瑜伽 與 韓國 RecoveRing 康復理療環 瑜伽教室；
+      位於河岸第一排，交通便利、停車方便。
+    </p>
+    <p class="muted" style="margin-top:10px;">
+      乾淨舒適的空間，陪伴您養成運動習慣、提升健康、放鬆身心。
+      這裡不只是教室，更是 深度連結與安心歸屬的港灣 🧘🏻‍♀️
     </p>
 
-    <h2>課程方向</h2>
-    <p>
-      • Inside Flow 音樂流動瑜伽<br>
-      • Inside Yoga Alignment 排列覺察<br>
-      • RecoveRing 康復理療環<br>
-      • 女性骨盆照護 / 修復伸展 / 私人課
-    </p>
+    <h2>課程與作品集</h2>
+    <ul>
+      <li><b>Inside Flow 內觀流</b>｜音樂與呼吸一體，情感連結與穩定度同時培養。</li>
+      <li><b>Inside Yoga 內觀瑜伽</b>｜Alignment 排列 × 覺察，從根基建立正位。</li>
+      <li><b>RecoveRing 康復理療環</b>｜釋放 → 修復 → 控制，漸進改善體態與疼痛。</li>
+      <li><b>女性骨盆照護</b>｜核心與骨盆底專項，孕產 / 久坐友善。</li>
+      <li><b>修復・伸展・香氛</b>｜深度放鬆，恢復身心能量。</li>
+      <li><b>輔具練習</b>（瑜伽輪、Pilates / Yogalates 大小球等）｜安全擴展活動度，強化穩定。</li>
+      <li><b>一對一私人課</b>｜入門打底 / 體態調整 / 術後或慢性疼痛照護。</li>
+    </ul>
 
-    <h2>聯絡與追蹤</h2>
+    <h2 style="margin-top:26px;">聯絡與追蹤</h2>
     <div class="link-grid">
-      <a class="link-card line" href="https://line.me/ti/p/VfsSh0J8_E">LINE 官方帳號<small>@iwanyoga</small></a>
-      <a class="link-card ig" href="https://www.instagram.com/wanwanyogi">個人 IG<small>@wanwanyogi</small></a>
-      <a class="link-card ig" href="https://www.instagram.com/iwanyoga.house">教室 IG<small>@iwanyoga.house</small></a>
-      <a class="link-card fb" href="https://www.facebook.com/share/1EZQrfK1vY/">Facebook 粉專</a>
-      <a class="link-card mail span-2" href="mailto:doreenwhh@gmail.com">Email 聯絡<small>doreenwhh@gmail.com</small></a>
+      <a class="link-card line" href="https://line.me/ti/p/VfsSh0J8_E" target="_blank" rel="noopener">
+        LINE 官方帳號
+        <small>@iwanyoga</small>
+      </a>
+
+      <a class="link-card ig" href="https://www.instagram.com/wanwanyogi" target="_blank" rel="noopener">
+        個人 IG
+        <small>@wanwanyogi</small>
+      </a>
+
+      <a class="link-card ig" href="https://www.instagram.com/iwanyoga.house" target="_blank" rel="noopener">
+        工作室 IG
+        <small>@iwanyoga.house</small>
+      </a>
+
+      <a class="link-card fb" href="https://www.facebook.com/share/1EZQrfK1vY/?mibextid=wwXIfr" target="_blank" rel="noopener">
+        Facebook 粉專
+        <small>愛丸瑜伽</small>
+      </a>
+
+      <a class="link-card mail span-2" href="mailto:doreenwhh@gmail.com">
+        Email 聯絡
+        <small>doreenwhh@gmail.com</small>
+      </a>
     </div>
 
-    <h2>掃描 QR Code</h2>
+    <h2 style="margin-top:26px;">掃描 QR Code</h2>
+
+    <!-- ✅ QR 已內嵌：不會再出現「小問號」 -->
     <div class="qr-grid">
       <div class="qr-card">
-        <img src="data:image/jpeg;base64,（此處放個人IG QR 的 base64）">
-        <div>@wanwanyogi</div>
+        <img alt="個人 IG QR Code（@wanwanyogi）"
+             src="data:image/jpeg;base64,{{PERSONAL_IG_B64}}">
+        <div>個人 IG｜@wanwanyogi</div>
       </div>
+
       <div class="qr-card">
-        <img src="data:image/jpeg;base64,（此處放工作室IG QR 的 base64）">
-        <div>@iwanyoga.house</div>
+        <img alt="工作室 IG QR Code（@iwanyoga.house）"
+             src="data:image/jpeg;base64,{{STUDIO_IG_B64}}">
+        <div>工作室 IG｜@iwanyoga.house</div>
       </div>
+
       <div class="qr-card">
-        <img src="data:image/png;base64,（此處放 LINE QR 的 base64）">
-        <div>LINE 官方帳號</div>
+        <img alt="官方 LINE QR Code（@iwanyoga）"
+             src="data:image/png;base64,{{LINE_B64}}">
+        <div>官方 LINE｜@iwanyoga</div>
       </div>
     </div>
 
@@ -195,7 +297,7 @@ footer{
 </main>
 
 <footer>
-  © 2026 iWan Yoga House · Zhubei · Inside Yoga × Inside Flow × RecoveRing
+  © 2026 愛丸瑜伽 iWan Yoga House · Zhubei, Taiwan
 </footer>
 
 </body>
